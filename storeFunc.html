@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>存储一组独立的函数</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var store={
+		nextId:1,
+		cache:{},
+		add:function(fn){
+			if(!fn.id){
+				fn.id=store.nextId++;
+				return !!(store.cache[fn.id]=fn)
+			}
+		}
+	}
+
+	function ninja(){};
+	store.add(ninja);
+</script>
+</html>

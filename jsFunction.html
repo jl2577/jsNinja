@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js函数</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function ArgType(arg){
+		if(typeof arg != "object")
+			return typeof arg;
+		else
+			return arg.constructor.name;
+
+	}
+
+	var func1=function func(){
+		console.log(func1===func);   //true  然而在外部却无法访问func//内联函数的名称只能在其内部访问。
+		this.ff="ff";
+		return this;
+	}
+
+	function Ninja(){
+		this.skulk=function(){return this;}
+	}
+
+	var obj1={a:function c(x){
+		return x>0?x+c(x-1):x
+		}};
+	var obj2={b:obj1.a};
+	obj1={};
+	console.log(obj2.b(100));
+
+</script>
+</html>
